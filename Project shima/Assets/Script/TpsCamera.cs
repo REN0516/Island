@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class TpsCamera : MonoBehaviour
 {
-    [SerializeField] Transform Player;
-    [SerializeField] float RotateSpeed;
-
-    float yaw, pitch;
+    GameObject targetObj;
+    Vector3 targetPos;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        RotateSpeed = 1;
+        targetObj = GameObject.Find("Player");
+        targetPos = targetObj.transform.position;
 
     }
 
@@ -21,14 +20,22 @@ public class TpsCamera : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(Player.position.x, transform.position.y, Player.position.z);
+        // targetの移動量分、自分（カメラ）も移動する
+        transform.position += targetObj.transform.position - targetPos;
+        targetPos = targetObj.transform.position;
 
-        yaw += Input.GetAxis("Mouse X") * RotateSpeed; //横回転入力
-        pitch -= Input.GetAxis("Mouse Y") * RotateSpeed; //縦回転入力
+        // マウスの右クリックを押している間
+        if (Input.GetMouseButton(1))
+        {
+            // マウスの移動量
+            float mouseInputX = Input.GetAxis("Mouse X");
+            float mouseInputY = Input.GetAxis("Mouse Y");
+            // targetの位置のY軸を中心に、回転（公転）する
+            transform.RotateAround(targetPos, Vector3.up, mouseInputX * Time.deltaTime * 200f);
+            // カメラの垂直移動（※角度制限なし、必要が無ければコメントアウト）
+            transform.RotateAround(targetPos, transform.right, mouseInputY * Time.deltaTime * 200f);
 
-        pitch = Mathf.Clamp(pitch, -80, 60); //縦回転角度制限する
-
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f); //回転の実行
-
+        }
     }
 }
+

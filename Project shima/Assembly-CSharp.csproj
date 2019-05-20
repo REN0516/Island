@@ -60,6 +60,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="Assets\Script\PlayerMove.cs" />
+    <Compile Include="Assets\Script\TpsCamera.cs" />
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+=======
     <Compile Include="Assets\Scripts\SceneSelectManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/student.DESKTOP-06H6TL1/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -75,6 +93,7 @@
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/student.DESKTOP-06H6TL1/Documents/Island/Project shima/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+>>>>>>> origin/master
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity2018_340/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -278,6 +297,15 @@
       <HintPath>D:/Unity2018_340/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
+<<<<<<< HEAD
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>C:/Users/student/Documents/Island/Project shima/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+=======
       <HintPath>C:/Users/student.DESKTOP-06H6TL1/Documents/Island/Project shima/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
@@ -285,6 +313,7 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/student.DESKTOP-06H6TL1/Documents/Island/Project shima/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+>>>>>>> origin/master
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Unity2018_340/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    float inputHorizontal;
-    float inputVertical;
+    static float inputHorizontal;
+    static float inputVertical;
     Rigidbody rb;
 
     float moveSpeed = 3f;

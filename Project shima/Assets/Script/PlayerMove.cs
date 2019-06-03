@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove scPlayerMove;
 
     static float inputHorizontal;
     static float inputVertical;
@@ -41,4 +42,25 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(moveForward);
         }
     }
+
+/*
+    void Awake()
+    {
+        //スクリプトが設定されていなければゲームオブジェクトを残しつつスクリプトを設定
+        if(scPlayerMove == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            scPlayerMove = this;
+            //Vector3 vc3 = gameObject.transform.position;
+            //vc3 = new Vector3(0, 1, 0);
+        }
+        //既にPlayerMoveスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+*/
+
 }

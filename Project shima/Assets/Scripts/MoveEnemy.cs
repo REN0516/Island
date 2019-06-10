@@ -10,8 +10,8 @@ public class MoveEnemy : MonoBehaviour
     private Vector3 targetpos;
     private float changetarget = 50f;
     public GameObject player;
-    public float targetdistance;
-    public float distancetoplayer;
+    private float targetdistance;
+    private float distancetoplayer;
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
         return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x), 0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
@@ -43,8 +43,8 @@ public class MoveEnemy : MonoBehaviour
     {
         targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         distancetoplayer = Vector3.SqrMagnitude(transform.position - player.transform.position);
-       // if (distancetoplayer > 70f) haikai();
-        /*else*/ if (3f < distancetoplayer && distancetoplayer < 70f) chase();
-        else attack();
+       // if (distancetoplayer > 50f) haikai();
+        /*else*/ if (3f < distancetoplayer && distancetoplayer < 50f) chase();
+       // else attack();
     }
 }

@@ -60,12 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\HouseAreaSc.cs" />
-    <Compile Include="Assets\Script\playerhealth.cs" />
-    <Compile Include="Assets\Script\PlayerMove.cs" />
-    <Compile Include="Assets\Script\TpsCamera.cs" />
+    <Compile Include="Assets\Scripts\HouseAreaSc.cs" />
     <Compile Include="Assets\Scripts\MoveEnemy.cs" />
+    <Compile Include="Assets\Scripts\playerhealth.cs" />
+    <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\SceneSelectManager.cs" />
+    <Compile Include="Assets\Scripts\TpsCamera.cs" />
     <Compile Include="Assets\Survival Character\Scripts\SimpleCameraController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/students/documents/Island/Project shima/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-/*
+
     void Awake()
     {
         //スクリプトが設定されていなければゲームオブジェクトを残しつつスクリプトを設定
@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+/*
 */
 
 }

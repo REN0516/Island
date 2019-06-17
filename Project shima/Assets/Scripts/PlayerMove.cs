@@ -55,10 +55,11 @@ public class PlayerMove : MonoBehaviour
             //vc3 = new Vector3(0, 1, 0);
         }
         //既にPlayerMoveスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+        /*
         else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 /*
 */

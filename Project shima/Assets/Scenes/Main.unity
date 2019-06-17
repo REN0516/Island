@@ -618,8 +618,8 @@ GameObject:
   - component: {fileID: 892481516}
   - component: {fileID: 892481515}
   - component: {fileID: 892481514}
-  - component: {fileID: 892481513}
   - component: {fileID: 892481512}
+  - component: {fileID: 892481513}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -657,7 +657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rotationspeed: 1
-  posrange: 5
   player: {fileID: 554482420}
 --- !u!136 &892481514
 CapsuleCollider:

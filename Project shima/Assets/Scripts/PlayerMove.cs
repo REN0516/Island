@@ -9,18 +9,30 @@ public class PlayerMove : MonoBehaviour
     static float inputHorizontal;
     static float inputVertical;
     Rigidbody rb;
+    private Animator animator;
 
     float moveSpeed = 3f;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+       animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+      // animator.SetBool("FastRun", false);
+        /*if (Input.GetKey(KeyCode.UpArrow)) {
 
+            //inputHorizontal = Input.GetAxisRaw("Horizontal");
+            animator.SetBool("FastRun",true);
+           
+        }
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            //inputVertical = Input.GetAxisRaw("Vertical");
+            animator.SetBool("FastRun", true);
+        }*/
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 

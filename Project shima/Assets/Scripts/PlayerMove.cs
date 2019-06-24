@@ -22,7 +22,15 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // animator.SetBool("FastRun", false);
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("run", true);
+        }
+        else
+        {
+            animator.SetBool("run", false);
+        }
+        // animator.SetBool("FastRun", false);
         /*if (Input.GetKey(KeyCode.UpArrow)) {
 
             //inputHorizontal = Input.GetAxisRaw("Horizontal");
@@ -39,6 +47,7 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdate()
     {
+    
         // カメラの方向から、X-Z平面の単位ベクトルを取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 

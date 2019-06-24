@@ -7,9 +7,10 @@ public class HouseAreaSc : MonoBehaviour
 {
     private void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.name == "HouseArea")
+        if(col.gameObject.tag == "HouseArea")
         {
             SceneManager.LoadScene("House");
+            transform.position = new Vector3(0f, 0.6f, 0f);
         }
     }
 

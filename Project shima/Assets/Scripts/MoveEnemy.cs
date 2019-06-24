@@ -40,6 +40,7 @@ public class MoveEnemy : MonoBehaviour
     }*/
     void Start()
     {
+        player = PlayerMove.GetPlayer();
         targetpos = GetRandomPosition(transform.position);
       //  enemyanim = this.gameObject.GetComponent<Animator>();
       //  animspeed = 0f;

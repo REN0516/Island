@@ -63,14 +63,18 @@ public class PlayerMove : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             scPlayerMove = this;
-            //Vector3 vc3 = gameObject.transform.position;
-            //vc3 = new Vector3(0, 1, 0);
+            
         }
         //既にPlayerMoveスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+        
         else
         {
             Destroy(gameObject);
         }
+    }
+    public static GameObject GetPlayer()
+    {
+        return scPlayerMove.gameObject;
     }
 /*
 */

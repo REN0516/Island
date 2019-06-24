@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveEnemy : MonoBehaviour
 {
     public float speed = 1f;                   //歩く速さ
-    public float rotationspeed = 1f;    //徘徊途中の方向転換速度
+    private float rotationspeed = 1f;    //徘徊途中の方向転換速度
     private float posrange = 5f;          //ランダム範囲
     private Vector3 targetpos;            //目標位置
     private float changetarget = 30f; //方向転換するまでの目標位置との距離
@@ -49,13 +49,13 @@ public class MoveEnemy : MonoBehaviour
     {
         targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         distancetoplayer = Vector3.SqrMagnitude(transform.position - player.transform.position);
-         if (distancetoplayer > 50f) {
+         if (distancetoplayer > 80f) {
         haikai();
 //        animspeed = speed * 3f;
  //       enemyanim.SetFloat("speed", animspeed);
         }
         else
-        if (3f < distancetoplayer && distancetoplayer < 50f)
+        if (3f < distancetoplayer && distancetoplayer < 80f)
         {
             chase();
            // animspeed = speed * 10f;

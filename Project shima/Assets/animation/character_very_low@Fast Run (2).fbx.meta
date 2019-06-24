@@ -88,7 +88,27 @@ ModelImporter:
     9500000: //RootNode
     13700000: Head_very_low
     13700002: YoungMan_very_low
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BagPack
+    second: {fileID: 2100000, guid: 3129ccd0a97851747bf6dc6f0314045c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 46a8606d7fbc41e43b47ad1c270ec27a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothes
+    second: {fileID: 2100000, guid: 258be657d9c89bd42ba55fb35a697f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: accessories
+    second: {fileID: 2100000, guid: fb86a74eefca3b143b1811511ebee6f2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

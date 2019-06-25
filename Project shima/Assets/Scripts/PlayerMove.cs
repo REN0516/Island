@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private Animator animator;
-    float animS = 0.1f;
+    private bool jcs;
     float inputHorizontal;
     float inputVertical;
     float moveSpeed = 3f;
@@ -17,6 +17,8 @@ public class PlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
 
         animator = GetComponent<Animator>();
+
+        jcs = false;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class PlayerMove : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.anyKey)
+        if (Input.GetKey("up")||Input.GetKey("down")||Input.GetKey("left")||Input.GetKey("right"))
         {
             animator.SetBool("run", true);
         }
@@ -33,7 +35,23 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("run", false);
         }
+  
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("crouch", true);
+            jcs = true;
+            Debug.Log("judgment");
+        }
+        /*else
+        {
+            animator.SetBool("crouch", false);
+        }*/
 
+       /* if (Input.GetKeyDown(KeyCode.Space)&&jcs==true)
+        {
+            animator.SetBool("crouch", false);
+            //JudgmentState = false;
+        }*/
 
     }
     private void FixedUpdate()

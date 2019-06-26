@@ -24,37 +24,50 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Playerの動き
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey("up")||Input.GetKey("down")||Input.GetKey("left")||Input.GetKey("right"))
+        //Playerのrunアニメーション
+        if (jcs==false)
         {
-            animator.SetBool("run", true);
+            if (Input.GetKey("up") || Input.GetKey("down") || Input.GetKey("left") || Input.GetKey("right"))
+            {
+                animator.SetBool("run", true);
+            }
+            else
+            {
+                animator.SetBool("run", false);
+            }
         }
-        else
-        {
-            animator.SetBool("run", false);
-        }
-  
+        
+
+        //しゃがみのアニメーション
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("crouch", true);
-            jcs = true;
-            Debug.Log("judgment");
-        }
-        /*else
-        {
-            animator.SetBool("crouch", false);
-        }*/
+            if (jcs == true)
+            {
+                animator.SetBool("crouch", false);
+                jcs = false;
 
-       /* if (Input.GetKeyDown(KeyCode.Space)&&jcs==true)
+            }
+            else
+            {
+                animator.SetBool("crouch", true);
+                jcs = true;
+                
+            }
+        }
+
+        //しゃがみ歩きのアニメーション
+        if (jcs==true)
         {
-            animator.SetBool("crouch", false);
-            //JudgmentState = false;
-        }*/
+            moveSpeed = 0.5f;
+        }
+       
 
     }
-    private void FixedUpdate()
+   private void FixedUpdate()
     {
         // カメラの方向から、X-Z平面の単位ベクトルを取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;

@@ -40,7 +40,22 @@ public class PlayerMove : MonoBehaviour
                 animator.SetBool("run", false);
             }
         }
-        
+
+        //しゃがみ歩きのアニメーション
+        if (jcs == true)
+        {
+            moveSpeed = 0.5f;
+            if (Input.GetKey("up") || Input.GetKey("down") || Input.GetKey("left") || Input.GetKey("right"))
+            {
+                animator.SetBool("crouchedWalking", true);
+            }
+            else
+            {
+                animator.SetBool("crouchedWalking", false);
+            }
+
+        }
+
 
         //しゃがみのアニメーション
         if (Input.GetKeyDown(KeyCode.Space))
@@ -59,11 +74,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        //しゃがみ歩きのアニメーション
-        if (jcs==true)
-        {
-            moveSpeed = 0.5f;
-        }
+        
        
 
     }

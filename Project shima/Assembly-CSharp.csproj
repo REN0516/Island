@@ -60,11 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\AnimationTest.cs" />
-=======
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
->>>>>>> origin/master
     <Compile Include="Assets\Scripts\HouseAreaSc.cs" />
     <Compile Include="Assets\Scripts\MoveEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />

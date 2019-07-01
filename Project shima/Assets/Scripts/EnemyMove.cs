@@ -8,13 +8,15 @@ public class EnemyMove : MonoBehaviour
     public Vector3[] wayPoints = new Vector3[3];//徘徊するポイントの座標を代入するVector3型の変数を配列で作る
     private int currentRoot;//現在目指すポイントを代入する変数
     private int Mode;//敵の行動パターンを分けるための変数
-    public Transform player;//プレイヤーの位置を取得するための変数
+    public GameObject player;//プレイヤーの位置を取得するための変数
     public Transform enemypos;//敵の位置を取得するための変数
     private NavMeshAgent agent;//NaveMashAgentの情報を取得するための変数
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();//NaveMeshAgentを代入
+        player = PlayerMove.GetPlayer();
+        //targetpos = GetRandomPosition(transform.position);
     }
 
     void Update()
@@ -22,11 +24,11 @@ public class EnemyMove : MonoBehaviour
         Vector3 pos = wayPoints[currentRoot];//Vector3型のposに現在の目的地の座標を代入
         float distance = Vector3.Distance(enemypos.position, player.transform.position);//敵とプレイヤーの距離を求める
 
-        if (distance > 7)//プレイヤーとの位置が5以上なら
+        if (distance >= 15)//プレイヤーとの位置が5以上なら
         {
             Mode = 0;
         }
-        if (distance < 7)//プレイヤーとの距離が5以下なら
+        if (distance < 15)//プレイヤーとの距離が5以下なら
         {
             Mode = 1;
         }

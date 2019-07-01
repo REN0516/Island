@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove scPlayerMove;
+
     private Animator animator;
     private bool jcs;
     float inputHorizontal;
     float inputVertical;
-    float moveSpeed = 3f;
+    public float moveSpeed = 3f;
     Rigidbody playerRB;
 
     // Start is called before the first frame update
@@ -94,5 +96,27 @@ public class PlayerMove : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(moveForward);
         }
+    }
+
+
+    void Awake()
+    {
+        //スクリプトが設定されていなければゲームオブジェクトを残しつつスクリプトを設定
+        if (scPlayerMove == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            scPlayerMove = this;
+
+        }
+        //既にPlayerMoveスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public static GameObject GetPlayer()
+    {
+        return scPlayerMove.gameObject;
     }
 }

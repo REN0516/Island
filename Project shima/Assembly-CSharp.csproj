@@ -63,9 +63,7 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\HouseAreaSc.cs" />
-    <Compile Include="Assets\Scripts\MoveEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\PlayerSceneChange.cs" />
     <Compile Include="Assets\Scripts\SceneSelectManager.cs" />
     <Compile Include="Assets\Survival Character\Scripts\SimpleCameraController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

@@ -9,24 +9,45 @@ public class PlayerMove : MonoBehaviour
     static float inputHorizontal;
     static float inputVertical;
     Rigidbody rb;
+    private Animator animator;
 
     float moveSpeed = 3f;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+       animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("run", true);
+        }
+        else
+        {
+            animator.SetBool("run", false);
+        }
+        // animator.SetBool("FastRun", false);
+        /*if (Input.GetKey(KeyCode.UpArrow)) {
 
+            //inputHorizontal = Input.GetAxisRaw("Horizontal");
+            animator.SetBool("FastRun",true);
+           
+        }
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            //inputVertical = Input.GetAxisRaw("Vertical");
+            animator.SetBool("FastRun", true);
+        }*/
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
     }
     void FixedUpdate()
     {
+    
         // カメラの方向から、X-Z平面の単位ベクトルを取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 

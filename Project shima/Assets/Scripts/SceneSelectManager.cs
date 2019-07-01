@@ -7,6 +7,7 @@ public class SceneSelectManager : MonoBehaviour
 {
     public void PushPlayButton()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Version_α");
+        //transform.position = new Vector3(1f, 1f, 1f);
     }
 }

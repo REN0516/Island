@@ -6,11 +6,13 @@ public class CameraControl : MonoBehaviour
 {
     GameObject targetObj;
     Vector3 targetPos;
+    Vector3 cameraOffset = new Vector3(0, 1.5f, -2);
     // Start is called before the first frame update
     void Start()
     {
-        targetObj = GameObject.Find("player");
+        targetObj = GameObject.Find("Player");
         targetPos = targetObj.transform.position;
+        transform.position = targetPos + cameraOffset;
     }
 
     // Update is called once per frame

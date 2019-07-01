@@ -10,7 +10,7 @@ public class HouseAreaSc : MonoBehaviour
         if(col.gameObject.tag == "HouseArea")
         {
             SceneManager.LoadScene("House");
-            transform.position = new Vector3(0f, 0.6f, 0f);
+            transform.position = new Vector3(0f, 0f, 0f);
         }
     }
 

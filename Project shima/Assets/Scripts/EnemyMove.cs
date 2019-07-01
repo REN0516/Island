@@ -22,11 +22,11 @@ public class EnemyMove : MonoBehaviour
         Vector3 pos = wayPoints[currentRoot];//Vector3型のposに現在の目的地の座標を代入
         float distance = Vector3.Distance(enemypos.position, player.transform.position);//敵とプレイヤーの距離を求める
 
-        if (distance > 7)//プレイヤーとの位置が5以上なら
+        if (distance >= 10)//プレイヤーとの位置が5以上なら
         {
             Mode = 0;
         }
-        if (distance < 7)//プレイヤーとの距離が5以下なら
+        if (distance < 10)//プレイヤーとの距離が5以下なら
         {
             Mode = 1;
         }

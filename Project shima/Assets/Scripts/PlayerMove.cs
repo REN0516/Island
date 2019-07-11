@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public AudioClip runSE;
+    public AudioClip croucheWallkSE;
     private Animator animator;
+    private AudioSource audioSource;
     private bool jcs;
     float inputHorizontal;
     float inputVertical;
@@ -17,6 +20,8 @@ public class PlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
 
         animator = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
 
         jcs = false;
     }
@@ -34,6 +39,7 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey("up") || Input.GetKey("down") || Input.GetKey("left") || Input.GetKey("right"))
             {
                 animator.SetBool("run", true);
+                audioSource.PlayOneShot(runSE);
             }
             else
             {

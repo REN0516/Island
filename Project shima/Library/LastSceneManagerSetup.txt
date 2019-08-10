@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/TestAnimation.unity
-=======
-- path: "Assets/Scenes/Version_\u03B1.unity"
->>>>>>> 41558a5dbe843b45f9c834cc8f4917a3095efb70
   isLoaded: 1
   isActive: 1

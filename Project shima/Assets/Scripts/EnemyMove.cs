@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class EnemyMove : MonoBehaviour
 
             case 2:
                 GetComponent<NavMeshAgent>().isStopped = true;
+                SceneManager.LoadScene("GameOver");
                 break;
         }
     }

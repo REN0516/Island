@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -11,11 +12,16 @@ public class EnemyMove : MonoBehaviour
     public GameObject player;//プレイヤーの位置を取得するための変数
     public Transform enemypos;//敵の位置を取得するための変数
     private NavMeshAgent agent;//NaveMashAgentの情報を取得するための変数
+    GameObject HeartBeatColor;
+    private float heartbeat;
+    private float DecayTime;
+    private float BeatTime;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();//NaveMeshAgentを代入
         player = PlayerMove.GetPlayer();
+        HeartBeatColor = GameObject.Find(" Heartbeat");
         //targetpos = GetRandomPosition(transform.position);
     }
 
@@ -23,14 +29,38 @@ public class EnemyMove : MonoBehaviour
     {
         Vector3 pos = wayPoints[currentRoot];//Vector3型のposに現在の目的地の座標を代入
         float distance = Vector3.Distance(enemypos.position, player.transform.position);//敵とプレイヤーの距離を求める
+        BeatTime = 100;
+        DecayTime = Time.deltaTime * BeatTime;
+        heartbeat -= DecayTime;
 
-        if (distance >= 15)//プレイヤーとの位置が5以上なら
+        HeartBeatColor.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f, heartbeat / 255.0f);
+
+/*        if (heartbeat <= 0.0f)
+        {
+            heartbeat = 100.0f;
+        }*/
+
+        if (distance >= 15)//プレイヤーとの位置が15以上なら
         {
             Mode = 0;
+            if (heartbeat <= 0.0f)
+            {
+                heartbeat = 100.0f;
+                BeatTime = 200f;
+            }
         }
-        if (distance < 15)//プレイヤーとの距離が5以下なら
+        if (distance < 15)//プレイヤーとの距離が15以下なら
         {
             Mode = 1;
+            if (heartbeat <= 150.0f)
+            {
+                heartbeat = 200.0f;
+                BeatTime = 400f;
+            }
+        }
+        if(distance <= 3)
+        {
+            Mode = 2;
         }
         switch (Mode)//Modeの切り替え
         {
@@ -49,6 +79,10 @@ public class EnemyMove : MonoBehaviour
 
             case 1:
                 agent.destination = player.transform.position;//プレイヤーに向かって進む
+                break;
+
+            case 2:
+                GetComponent<NavMeshAgent>().isStopped = true;
                 break;
         }
     }

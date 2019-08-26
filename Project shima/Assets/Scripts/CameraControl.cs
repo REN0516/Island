@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class CameraControl : MonoBehaviour
 {
     GameObject targetObj;
-    GameObject HeartBeatColor;
+ //   GameObject HeartBeatColor;
     Vector3 targetPos;
     Vector3 cameraOffset = new Vector3(0, 1.5f, -2);
-    private float DecayTime;
-    private float heartbeat;
+ //   private float DecayTime;
+ //   private float heartbeat;
    // public float heartbeatTime = 1.0f;
 
 
@@ -20,7 +20,7 @@ public class CameraControl : MonoBehaviour
         targetObj = GameObject.Find("Player");
         targetPos = targetObj.transform.position;
         transform.position = targetPos + cameraOffset;
-        HeartBeatColor = GameObject.Find(" Heartbeat");
+     //   HeartBeatColor = GameObject.Find(" Heartbeat");
 
     }
 
@@ -32,7 +32,7 @@ public class CameraControl : MonoBehaviour
         targetPos = targetObj.transform.position;
 
 
-        DecayTime = Time.deltaTime * 50f;
+/*        DecayTime = Time.deltaTime * 200f;
         heartbeat -= DecayTime;
 
         HeartBeatColor.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f, heartbeat / 255.0f);
@@ -43,7 +43,7 @@ public class CameraControl : MonoBehaviour
 
             //HeartBeatColor.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f, 100.0f / 255.0f);
             
-        }
+        }*/
 
         // マウスの右クリックを押している間
         if (Input.GetMouseButton(1))

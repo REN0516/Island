@@ -17,12 +17,14 @@ public class EnemyMove : MonoBehaviour
     private float heartbeat;
     private float DecayTime;
     private float BeatTime;
+    private Animator anim;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();//NaveMeshAgentを代入
         player = PlayerMove.GetPlayer();
         HeartBeatColor = GameObject.Find(" Heartbeat");
+        anim = GetComponent<Animator>();
         //targetpos = GetRandomPosition(transform.position);
     }
 
@@ -41,16 +43,18 @@ public class EnemyMove : MonoBehaviour
             heartbeat = 100.0f;
         }*/
 
-        if (distance >= 15)//プレイヤーとの位置が15以上なら
+        if (distance >= 25)//プレイヤーとの位置が15以上なら
         {
+            anim.SetBool("Run", false);
             Mode = 0;
+
             if (heartbeat <= 0.0f)
             {
                 heartbeat = 100.0f;
                 BeatTime = 200f;
             }
         }
-        if (distance < 15)//プレイヤーとの距離が15以下なら
+        if (distance < 25)//プレイヤーとの距離が15以下なら
         {
             Mode = 1;
             if (heartbeat <= 150.0f)
@@ -59,7 +63,7 @@ public class EnemyMove : MonoBehaviour
                 BeatTime = 400f;
             }
         }
-        if(distance <= 3)
+        if (distance <= 3)
         {
             Mode = 2;
         }
@@ -79,12 +83,18 @@ public class EnemyMove : MonoBehaviour
                 break;
 
             case 1:
+                anim.SetBool("Run", true);
                 agent.destination = player.transform.position;//プレイヤーに向かって進む
+                agent.speed = 13.0f;
                 break;
 
             case 2:
                 GetComponent<NavMeshAgent>().isStopped = true;
+<<<<<<< HEAD
+                anim.SetBool("Run", false);
+=======
                 SceneManager.LoadScene("GameOver");
+>>>>>>> 00d9e60e03b793c2d4d3214526edc87058ed6878
                 break;
         }
     }

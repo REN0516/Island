@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
-{
+{ 
     public Vector3[] wayPoints = new Vector3[3];//徘徊するポイントの座標を代入するVector3型の変数を配列で作る
     private int currentRoot;//現在目指すポイントを代入する変数
     private int Mode;//敵の行動パターンを分けるための変数
@@ -89,7 +90,11 @@ public class EnemyMove : MonoBehaviour
 
             case 2:
                 GetComponent<NavMeshAgent>().isStopped = true;
+<<<<<<< HEAD
                 anim.SetBool("Run", false);
+=======
+                SceneManager.LoadScene("GameOver");
+>>>>>>> 00d9e60e03b793c2d4d3214526edc87058ed6878
                 break;
         }
     }

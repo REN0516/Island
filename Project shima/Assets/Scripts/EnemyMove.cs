@@ -90,11 +90,11 @@ public class EnemyMove : MonoBehaviour
 
             case 2:
                 GetComponent<NavMeshAgent>().isStopped = true;
-<<<<<<< HEAD
+
                 anim.SetBool("Run", false);
-=======
+
                 SceneManager.LoadScene("GameOver");
->>>>>>> 00d9e60e03b793c2d4d3214526edc87058ed6878
+
                 break;
         }
     }
